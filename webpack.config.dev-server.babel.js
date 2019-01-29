@@ -85,39 +85,27 @@ if (config.get('browserSync.active') === true) {
 }
 
 webpackConfig.module.rules = webpackConfig.module.rules.concat({
-  test: /\.css$/,
+  test: /\.(?:css|scss)$/,
   use: [
-    {
-      loader: 'style-loader',
-    },
-    {
-      loader: 'css-loader',
-      options: {
-        sourceMap: true,
-        importLoaders: 1,
-        modules: true,
-        localIdentName: '[name]__[local]_[hash:base64]',
-      },
-    },
+    'style-loader',
+    'css-loader',
     {
       loader: 'postcss-loader',
       ident: 'postcss',
       options: {
         sourceMap: true,
-        // https://github.com/postcss/postcss-loader/issues/92
-        // https://github.com/postcss/postcss-loader/issues/8
         plugins: () => [
           precss(),
-          // https://github.com/csstools/postcss-preset-env
           postcssPresetEnv({
             browsers: ['last 2 versions', 'ie >= 9'],
-            compress: true,
-          }),
-        ],
-      },
+            compress: true
+          })
+        ]
+      }
     },
-  ],
-});
+    'sass-loader'
+  ]
+})
 
 webpackConfig.plugins = webpackConfig.plugins.concat(htmlPlugins);
 
