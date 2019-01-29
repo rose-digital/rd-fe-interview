@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-boilerplate",
-  "version": "1.2.2",
-  "description": "React Redux Boilerplate is a workflow boilerplate that make life easier for developers by providing a virtual development environment and production ready build process framework out of the box.",
+  "name": "rd-fe-interview",
+  "version": "0.0.1",
+  "description": "React + Redux Interview Boilerplate",
   "scripts": {
     "dev": "cross-env NODE_ENV=development DASHBOARD_PORT=9901 webpack-dashboard -p 9901 -c red -t dashboard -- node bin/commands.js dev",
     "build": "cross-env NODE_ENV=production node bin/commands.js build",
@@ -14,10 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/iroy2000/react-redux-boilerplate.git"
+    "url": "https://github.com/rose-digital/rd-fe-interview"
   },
-  "homepage": "https://github.com/iroy2000/react-redux-boilerplate",
-  "author": "Roy Yu <iroy2000@gmail.com>",
+  "author": "Rose Digital",
   "license": "MIT",
   "engines": {
     "npm": ">=3.10.7",
